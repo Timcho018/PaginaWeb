@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamics - Tienda</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styleTienda.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header"> <!--Esto lo hizo Jimmy-->
+    <div class="header-bottom skewBg" data-header>
+      <div class="container">
+
+        <a href="index.html" class="logo">Gamics</a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link skewBg" data-nav-link>Inicio</a>
+            </li>
+            <li class="navbar-item">
+              <a href="tienda.html" class="navbar-link skewBg" data-nav-link>Tienda</a>
+            </li>
+            <li class="navbar-item">
+              <a href="contacto.html" class="navbar-link skewBg" data-nav-link>Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="cart-btn" aria-label="Carrito">
+            <ion-icon name="cart"></ion-icon>
+            <span class="cart-badge">0</span>
+          </button>
+
+          <button class="search-btn" aria-label="Abrir búsqueda" data-search-toggler>
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+          <button class="nav-toggle-btn" aria-label="Abrir menú" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PANEL CARRITO (inmediatamente después del header) -->
+<div id="cartPanel" class="cart-panel">
+  <div class="cart-panel-header">
+    <h2>🛒 Tu Carrito</h2>
+    <button id="closeCart" class="close-btn">✖</button>
+  </div>
+  <ul id="cartItems" class="cart-items"></ul>
+  <p id="cartTotal">Total: $0.00</p>
+  <button id="clearCart" class="btn-buy">Vaciar carrito</button>
+</div>
+
+
+
+  <section id="shop" class="shop-section">
+    <div class="container">
+      <h2 class="section-title">Tienda de Videojuegos</h2>
+
+      <!-- Barra de búsqueda (Filtros) -->
+        <div class="shop-filters">
+          <input type="text" id="searchName" placeholder="Buscar por nombre...">
+          <select id="searchCategory">
+          <option value="all">Todas las categorías</option>
+            <option value="RPG">RPG</option>
+            <option value="Acción">Acción</option>
+            <option value="Deportes">Deportes</option>
+            <option value="Disparos">Disparos</option>
+            <option value="Plataformas">Plataformas</option>
+            <option value="Supervivencia">Supervivencia</option>
+          </select>
+        </div>
+
+
+      <div class="shop-grid"> <!--Para agregar mas cartas solo copien y peguen una las clase "game-card"-->
+        
+        <div class="game-card" data-name="Elden Ring" data-category="RPG">
+          <img src="images/EldenRing.jpg" alt="Elden Ring" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Elden Ring</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+        
+        <div class="game-card" data-name="GTA 5" data-category="Acción">
+          <img src="images/GTA5.jpg" alt="GTA5" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">GTA 5</h3>
+            <p class="game-category">Acción</p>
+            <p class="game-price">$39.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+        
+        <div class="game-card" data-name="FIFA" data-category="Deportes">
+          <img src="images/fifa.jpg" alt="FIFA" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">FIFA 2025</h3>
+            <p class="game-category">Deportes</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="God Of War" data-category="Acción">
+          <img src="images/GOW.jpg" alt="GOW" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">God Of War: Ragnarok</h3>
+            <p class="game-category">Acción</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Fallout 4" data-category="RPG">
+          <img src="images/Fallout4.jpg" alt="Fallout4" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Fallout 4</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$29.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="COD" data-category="Disparos">
+          <img src="images/COD.png" alt="COD" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Call Of Duty: Modern Warfare III</h3>
+            <p class="game-category">Disparos</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Hollow Knight" data-category="Plataformas">
+          <img src="images/HollowKnight.jpg" alt="HollowKnight" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Hollow Knight</h3>
+            <p class="game-category">Plataformas</p>
+            <p class="game-price">$19.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Persona 3" data-category="RPG">
+          <img src="images/Persona3.jpg" alt="Persona3" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Persona 3 Reload</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Cyberpunk" data-category="Acción">
+          <img src="images/Cyberpunk.jpg" alt="Cyberpunk" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Cyberpunk 2077</h3>
+            <p class="game-category">Acción</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Half Life 2" data-category="Disparos">
+          <img src="images/Half-Life_2.jpg" alt="HL2" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Half Life 2</h3>
+            <p class="game-category">Disparos</p>
+            <p class="game-price">$9.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Subnautica" data-category="Supervivencia">
+          <img src="images/Subnautica.jpg" alt="Subnautica" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Subnautica</h3>
+            <p class="game-category">Supervivencia</p>
+            <p class="game-price">$39.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Portal 2" data-category="Plataformas">
+          <img src="images/Portal2.jpg" alt="Portal2" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Portal 2</h3>
+            <p class="game-category">Plataformas</p>
+            <p class="game-price">$9.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Elden Ring" data-category="RPG">
+          <img src="images/Elden_Ring.jpg" alt="Elden Ring" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Elden Ring</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Elden Ring" data-category="RPG">
+          <img src="images/Elder Ring 2.jpg" alt="Elden Ring" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Elden Ring</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Elden Ring" data-category="RPG">
+          <img src="images/Elder ring 3.jpg" alt="Elden Ring" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Elden Ring</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <div class="game-card" data-name="Elden Ring" data-category="RPG">
+          <img src="images/Elder ring 4.jpg" alt="Elden Ring" class="game-img">
+          <div class="game-info">
+            <h3 class="game-title">Elden Ring</h3>
+            <p class="game-category">RPG</p>
+            <p class="game-price">$59.99</p>
+            <button class="btn-buy">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <p id="noResults" style="display:none; color:#fff; text-align:center; margin-top:20px;">
+      No se encontraron juegos 😢
+      </p>
+    </div>
+  </section>
+
+  <script>
+  const searchName = document.getElementById("searchName");
+  const searchCategory = document.getElementById("searchCategory");
+  const gameCards = document.querySelectorAll(".game-card");
+  const noResults = document.getElementById("noResults");
+
+  function filterGames() {
+    const nameValue = searchName.value.toLowerCase();
+    const categoryValue = searchCategory.value;
+
+    let visibleCount = 0; 
+
+    gameCards.forEach(card => {
+      const gameName = card.dataset.name.toLowerCase();
+      const gameCategory = card.dataset.category;
+
+      const matchName = gameName.includes(nameValue);
+      const matchCategory = (categoryValue === "all" || gameCategory === categoryValue);
+
+      if (matchName && matchCategory) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    // Mostrar/ocultar mensaje de "no hay resultados"
+    noResults.style.display = (visibleCount === 0) ? "block" : "none";
+  }
+
+  searchName.addEventListener("input", filterGames);
+  searchCategory.addEventListener("change", filterGames);
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartPanel = document.getElementById("cartPanel");
+    const cartBtn = document.querySelector(".cart-btn");
+    const closeCartBtn = document.getElementById("closeCart");
+    const cartBadge = document.querySelector(".cart-badge");
+    const cartItemsList = document.getElementById("cartItems");
+    const cartTotalP = document.getElementById("cartTotal");
+    const clearCartBtn = document.getElementById("clearCart");
+  
+    let total = 0;
+    let countItems = 0;
+  
+    function updateUI() {
+      cartTotalP.textContent = `Total: $${total.toFixed(2)}`;
+      cartBadge.textContent = countItems;
+      cartBadge.style.display = countItems > 0 ? "inline-block" : "none";
+    }
+  
+    // Abrir / cerrar panel carrito
+    cartBtn.addEventListener("click", () => cartPanel.classList.toggle("open"));
+    closeCartBtn.addEventListener("click", () => cartPanel.classList.remove("open"));
+  
+    // Escoger sólo los botones "Añadir" dentro de .game-card 
+    document.querySelectorAll(".game-card .btn-buy").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const card = e.currentTarget.closest(".game-card");
+        if (!card) return;
+  
+        const title = card.querySelector(".game-title").textContent.trim();
+        const priceText = card.querySelector(".game-price").textContent.replace("$", "").trim();
+        const price = parseFloat(priceText) || 0;
+  
+        const li = document.createElement("li");
+        li.dataset.price = price;
+        li.className = "cart-item";
+        li.innerHTML = `
+          <span class="item-title">${title}</span>
+          <span class="item-price">$${price.toFixed(2)}</span>
+          <button class="remove-item" aria-label="Eliminar">❌</button>
+        `;
+  
+        // Eliminar item
+        li.querySelector(".remove-item").addEventListener("click", () => {
+          const p = parseFloat(li.dataset.price) || 0;
+          total = Math.max(0, total - p);
+          countItems = Math.max(0, countItems - 1);
+          li.remove();
+          updateUI();
+        });
+  
+        cartItemsList.appendChild(li);
+        total += price;
+        countItems++;
+        updateUI();
+      });
+    });
+  
+    // Vaciar carrito
+    clearCartBtn.addEventListener("click", () => {
+      cartItemsList.innerHTML = "";
+      total = 0;
+      countItems = 0;
+      updateUI();
+    });
+  
+    updateUI();
+  });
+  </script>
+  
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo y descripción -->
+      <div class="footer-brand">
+        <h2 class="footer-logo">Gamics</h2>
+        <p>Tu tienda gamer definitiva: juegos, consolas y accesorios con las mejores ofertas.</p>
+      </div>
+
+      <!-- Navegación rápida -->
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#shop">Tienda</a></li>
+          <li><a href="index.html#ofertas">Ofertas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer-contact">
+        <h3>Contáctanos</h3>
+        <p>Email: soporte@gamics.com</p>
+        <p>Teléfono: +51 987 654 321</p>
+        <p>Dirección: Av. Gamer 123, Lima, Perú</p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="footer-social">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gamics. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <a href="#top" class="back-top-btn" data-back-top-btn aria-label="Volver arriba">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+  <!-- custom js link -->
+  <script src="js/script.js" defer></script>
+
+  <!-- ionicon -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

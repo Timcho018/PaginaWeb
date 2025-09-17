@@ -1,0 +1,861 @@
+:root {
+  /**
+   * colors
+   */
+
+  --rich-black-fogra-29_95: hsla(222, 18%, 11%, 0.95);
+  --raisin-black-1: hsl(0, 0%, 16%);
+  --raisin-black-2: hsl(236, 17%, 17%);
+  --raisin-black-3: hsl(280, 11%, 11%);
+  --raisin-black-4: hsl(280, 8%, 15%);
+  --english-violet: hsl(274, 21%, 23%);
+  --eerie-black-1: hsl(277, 25%, 10%);
+  --eerie-black-2: hsl(280, 7%, 8%);
+  --roman-silver: hsl(220, 6%, 59%);
+  --quick-silver: hsl(0, 1%, 65%);
+  --light-gray-1: hsl(0, 0%, 80%);
+  --light-gray-2: hsl(0, 2%, 82%);
+  --marigold_75: hsla(42, 99%, 46%, 0.75);
+  --xiketic_90: hsla(280, 37%, 8%, 0.9);
+  --cultured-2: hsl(0, 0%, 97%);
+  --marigold: hsl(42, 99%, 46%);
+  --platinum: hsl(0, 0%, 89%);
+  --dim-gray: hsl(0, 0%, 42%);
+  --white_15: hsla(0, 0%, 100%, 0.15);
+  --white_10: hsla(0, 0%, 100%, 0.1);
+  --xiketic: hsl(277, 25%, 10%);
+  --silver: hsl(0, 0%, 78%);
+  --white: hsl(0, 0%, 100%);
+  --jet: hsl(236, 13%, 23%);
+
+  /* neon accents */
+  --neon-cyan: #00f9ff;
+  --neon-magenta: #ff2dd4;
+  --neon-blue: #4dc6ff;
+  --neon-green: #7effa4;
+
+  /**
+   * typography
+   */
+
+  --ff-oxanium: 'Oxanium', cursive;
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-1: 7rem;
+  --fs-2: 4.5rem;
+  --fs-3: 3.6rem;
+  --fs-4: 2.4rem;
+  --fs-5: 2.2rem;
+  --fs-6: 2rem;
+  --fs-7: 1.6rem;
+  --fs-8: 1.5rem;
+  --fs-9: 1.4rem;
+  --fs-10: 1.3rem;
+  --fs-11: 1.2rem;
+
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  /**
+   * spacing
+   */
+
+  --section-padding: 120px;
+
+  /**
+   * gradient
+   */
+
+  --gradient: radial-gradient(circle, hsl(250, 7%, 17%), hsl(250, 11%, 11%));
+
+  /**
+   * box shadow
+   */
+
+  --shadow-1: 0px 2px 8px 0px hsla(0, 0%, 0%, 0.2),
+              inset 0px 2px 8px 0px hsla(0, 0%, 0%, 0.4);
+  --shadow-2: 0px 5px 10px 1px hsla(0, 0%, 0%, 0.4);
+  --shadow-3: 0px 5px 10px 1px hsla(219, 98%, 17%, 0.2);
+  --shadow-4: 0px 5px 10px 1px hsla(0, 0%, 0%, 0.15);
+
+  /**
+   * transition
+   */
+
+  --transition: 0.25s ease;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+img,
+span,
+time,
+input,
+button,
+textarea,
+ion-icon { display: block; }
+
+img { height: auto; }
+
+input,
+button,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input,
+textarea { width: 100%; }
+
+button { cursor: pointer; }
+
+ion-icon { pointer-events: none; }
+
+address { font-style: normal; }
+
+html {
+  font-family: var(--ff-poppins);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--raisin-black-3);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  color: var(--white);
+}
+
+/* focus visible */
+:focus-visible { outline-offset: 4px; }
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.container { padding-inline: 15px; }
+
+.section { padding-block: var(--section-padding); }
+
+.h1,
+.h2,
+.h3 {
+  color: var(--white);
+  font-family: var(--ff-oxanium);
+  font-weight: var(--fw-800);
+  line-height: 1;
+}
+
+.h1 {
+  font-size: var(--fs-2);
+  letter-spacing: -3px;
+}
+
+.h2 { font-size: var(--fs-3); }
+
+.h3 {
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+}
+
+:is(.h1, .h2, .h3) .span {
+  display: inline-block;
+  color: var(--marigold);
+}
+
+.btn {
+  margin-inline: auto;
+  color: var(--eerie-black-1);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+  min-height: 55px;
+  padding-inline: 35px;
+}
+
+.skewBg {
+  position: relative;
+  z-index: 1;
+}
+
+.skewBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: skewX(var(--skewX, -16deg));
+  background-color: var(--bg, var(--marigold));
+  z-index: -1;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(100% + 8px);
+  width: 5px;
+  transform: skewX(-16deg) translateX(var(--translateX, 0));
+  background-color: var(--marigold);
+  transition: var(--transition);
+}
+
+.btn:is(:hover, :focus)::after { --translateX: -13px; }
+
+.w-100 { width: 100%; }
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+/* === Fondo sólido del header para evitar transparencia === */
+.header {
+  background-color: var(--raisin-black-3); /* mismo fondo que tienda */
+  box-shadow: var(--shadow-2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Efecto header idéntico a tienda */
+.navbar-link.skewBg {
+  position: relative;
+  color: var(--white);
+  font-family: var(--ff-oxanium);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.navbar-link.skewBg:hover,
+.navbar-link.skewBg:focus {
+  color: var(--eerie-black-1); /* texto oscuro encima del trapecio amarillo */
+}
+
+.navbar-link.skewBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: skewX(-16deg);
+  background-color: var(--marigold);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.navbar-link.skewBg:hover::before,
+.navbar-link.skewBg:focus::before {
+  opacity: 1;
+}
+
+/*-----------------------------------*\
+  #SEARCH BOX
+\*-----------------------------------*/
+
+.search-container {
+  background-color: var(--rich-black-fogra-29_95);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 40px;
+  z-index: 6;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.search-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.search-container .input-wrapper {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+}
+
+.search-container .search-field {
+  color: var(--white);
+  font-size: 2rem;
+  padding: 20px;
+  padding-inline-end: 60px;
+  border-block-end: 3px solid var(--white_10);
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-container .search-field:focus { border-color: var(--light-gray-2); }
+
+.search-container .search-field::-webkit-search-cancel-button { display: none; }
+
+.search-container .search-submit {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 25px;
+  color: var(--marigold);
+}
+
+.search-container .search-submit ion-icon { --ionicon-stroke-width: 70px; }
+
+.search-container .search-close {
+  position: fixed;
+  inset: 0;
+  cursor: default;
+  z-index: -1;
+}
+
+/*-----------------------------------*\
+  #CONTACT SECTION
+\*-----------------------------------*/
+
+/* ... 👇 aquí sigue tu CSS de contacto (formularios, info, footer, etc.)
+   que no hace falta repetir porque ya lo tienes igual.
+   Lo único que cambiamos fue el bloque HEADER arriba. */
+
+/*-----------------------------------*\
+  #CONTACT SECTION
+\*-----------------------------------*/
+
+.contact {
+  margin-block-start: 84px;
+  padding-block: 60px;
+  background-image: linear-gradient(180deg, var(--raisin-black-3) 0%, var(--eerie-black-1) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* decorative glowing blobs */
+.contact::after {
+  content: "";
+  position: absolute;
+  inset: -30% -20% auto -20%;
+  height: 130%;
+  background: radial-gradient(30% 30% at 15% 20%, rgba(0,249,255,0.07), transparent 8%),
+              radial-gradient(20% 20% at 80% 70%, rgba(255,45,212,0.06), transparent 8%);
+  pointer-events: none;
+  z-index: 0;
+  animation: blobs 10s linear infinite alternate;
+  mix-blend-mode: screen;
+}
+@keyframes blobs {
+  0% { transform: translateY(0) scale(1); opacity: 0.9; }
+  100% { transform: translateY(-10%) scale(1.05); opacity: 1; }
+}
+
+.contact-hero {
+  text-align: center;
+  margin-block-end: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-title {
+  font-size: var(--fs-2);
+  margin-block-end: 20px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 18px rgba(0,249,255,0.18);
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 6px rgba(0,249,255,0.07); transform: translateY(0); }
+  50% { text-shadow: 0 0 28px rgba(0,249,255,0.25); transform: translateY(-4px); }
+  100% { text-shadow: 0 0 6px rgba(0,249,255,0.07); transform: translateY(0); }
+}
+
+.contact-subtitle {
+  color: var(--silver);
+  font-size: var(--fs-8);
+  max-width: 60ch;
+  margin-inline: auto;
+  line-height: 1.8;
+  opacity: 0.95;
+  transform-origin: center;
+  animation: floatIn 0.9s ease both;
+}
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(18px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.contact-content {
+  display: grid;
+  gap: 60px;
+  max-width: 1200px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/*-----------------------------------*\
+  #CONTACT FORM
+\*-----------------------------------*/
+
+.contact-form {
+  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  position: relative;
+  overflow: visible;
+  transition: transform 0.45s var(--cubic-out), box-shadow 0.35s;
+  transform-origin: center;
+}
+
+.contact-form:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  right: -30%;
+  width: 260%;
+  height: 220%;
+  background: conic-gradient(from 120deg, rgba(0,249,255,0.03), transparent 20%, rgba(255,45,212,0.03), transparent 60%);
+  filter: blur(24px);
+  z-index: 0;
+  animation: slowRotate 12s linear infinite;
+  pointer-events: none;
+}
+@keyframes slowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.contact-form-inner {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(8,10,15,0.5));
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.form-title {
+  margin-block-end: 30px;
+  text-align: center;
+  color: var(--white);
+  font-size: var(--fs-3);
+  letter-spacing: -1px;
+}
+
+.form-group {
+  margin-block-end: 20px;
+  position: relative;
+}
+
+.form-label {
+  color: var(--roman-silver);
+  font-size: var(--fs-9);
+  font-weight: var(--fw-600);
+  margin-block-end: 8px;
+  display: block;
+}
+
+.form-input,
+.form-textarea {
+  border: 2px solid rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 15px 18px;
+  color: var(--white);
+  font-size: var(--fs-8);
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.18s;
+  resize: vertical;
+  backdrop-filter: blur(6px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--roman-silver);
+  opacity: 0.85;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: rgba(0,249,255,0.55);
+  outline: none;
+  box-shadow: 0 6px 30px rgba(0,249,255,0.06), 0 0 14px rgba(0,249,255,0.08);
+  transform: translateY(-2px);
+}
+
+.form-group.focused .form-label {
+  color: var(--neon-cyan);
+}
+
+.form-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  color: var(--eerie-black-1);
+  border-radius: 12px;
+  transition: transform 0.25s var(--cubic-out), box-shadow 0.25s;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px 30px rgba(0,249,255,0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 80px rgba(0,249,255,0.14);
+}
+
+.form-btn[disabled] {
+  opacity: 0.6;
+  transform: none;
+  pointer-events: none;
+}
+
+/*-----------------------------------*\
+  #CONTACT INFO
+\*-----------------------------------*/
+
+.contact-info {
+  display: grid;
+  gap: 30px;
+}
+
+.contact-card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 28px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: transform 0.45s var(--cubic-out), box-shadow 0.35s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.contact-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.25));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.contact-card:hover::after { opacity: 1; }
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
+
+.contact-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  margin-block-end: 18px;
+  font-size: 28px;
+  color: var(--eerie-black-1);
+  position: relative;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+
+.contact-icon ion-icon {
+  font-size: 28px;
+  color: var(--neon-cyan);
+  filter: drop-shadow(0 6px 18px rgba(0,249,255,0.12));
+}
+
+.contact-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(0,249,255,0.06), transparent 10%);
+  pointer-events: none;
+}
+
+.contact-card-title {
+  margin-block-end: 12px;
+  font-size: var(--fs-6);
+  color: var(--white);
+}
+
+.contact-card-text {
+  color: var(--silver);
+  font-size: var(--fs-8);
+  line-height: 1.6;
+}
+
+.contact-card-link {
+  color: var(--marigold);
+  transition: var(--transition);
+}
+.contact-card-link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  background-color: #080808;
+  color: #ddd;
+  padding: 60px 20px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.footer h3, .footer h2 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  color: #ff3c78;
+}
+
+.footer p, .footer a {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ff3c78;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #111, #0b0b0b);
+  color: #fff;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.footer-social a ion-icon { font-size: 20px; color: var(--neon-cyan); filter: drop-shadow(0 6px 20px rgba(0,249,255,0.08)); }
+
+.footer-social a:hover {
+  transform: translateY(-6px) rotate(-6deg);
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  box-shadow: 0 20px 60px rgba(0,249,255,0.08);
+}
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+.back-top-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  background-color: var(--marigold);
+  padding: 12px;
+  z-index: 4;
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 4px;
+  color: var(--eerie-black-1);
+  font-size: 20px;
+}
+
+.back-top-btn.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-10px);
+}
+
+.back-top-btn ion-icon { font-size: 20px; }
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .contact-form { padding: 50px; }
+  .contact-form-inner { padding: 40px; }
+}
+
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+  .contact-content {
+    grid-template-columns: 1fr 400px;
+    align-items: start;
+  }
+  .contact-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .back-top-btn { bottom: 50px; right: 45px; }
+}
+
+@media (min-width: 992px) {
+  .container { max-width: 960px; }
+  .contact-content {
+    grid-template-columns: 1fr 450px;
+    gap: 80px;
+  }
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container { max-width: 1230px; }
+  .contact-content {
+    grid-template-columns: 1fr 500px;
+    gap: 100px;
+  }
+}
+
+/*-----------------------------------*\
+  #EXTRA UTILS
+\*-----------------------------------*/
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--raisin-black-2);
+  color: var(--white);
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1200;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border-left: 4px solid var(--neon-cyan);
+  min-width: 280px;
+  animation: slideInNotification 0.3s ease;
+}
+/* === Forzar el mismo efecto de tienda === */
+
+/* Links con skew amarillo */
+.navbar-link.skewBg {
+  position: relative;
+  color: var(--white);
+  font-family: var(--ff-oxanium);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+/* Efecto hover igual que en tienda */
+.navbar-link.skewBg:hover,
+.navbar-link.skewBg:focus {
+  color: var(--eerie-black-1); /* texto oscuro encima del trapecio */
+}
+
+.navbar-link.skewBg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: skewX(-16deg);
+  background-color: var(--marigold);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* Aparece el trapecio al pasar el mouse */
+.navbar-link.skewBg:hover::before,
+.navbar-link.skewBg:focus::before {
+  opacity: 1;
+}
+
+.notification .notification-content ion-icon { font-size: 20px; color: var(--neon-cyan); }
+.notification-success { border-left-color: #4ade80; }
+.notification-error { border-left-color: #ef4444; }
+
+@keyframes slideInNotification {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

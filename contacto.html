@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Gamics</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- estilos del header -->
+  <link rel="stylesheet" href="css/styleTienda.css">
+
+  <!-- estilos propios de contacto -->
+  <link rel="stylesheet" href="css/styleContacto.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER (importado desde tienda.html) -->
+  <header class="header">
+    <div class="header-bottom skewBg" data-header>
+      <div class="container">
+
+        <a href="index.html" class="logo">Gamics</a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link skewBg" data-nav-link>Inicio</a>
+            </li>
+            <li class="navbar-item">
+              <a href="tienda.html" class="navbar-link skewBg" data-nav-link>Tienda</a>
+            </li>
+            <li class="navbar-item">
+              <a href="contacto.html" class="navbar-link skewBg" data-nav-link>Contacto</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="cart-btn" aria-label="Carrito">
+            <ion-icon name="cart"></ion-icon>
+            <span class="cart-badge">0</span>
+          </button>
+
+          <button class="search-btn" aria-label="Abrir búsqueda" data-search-toggler>
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+          <button class="nav-toggle-btn" aria-label="Abrir menú" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH BOX -->
+  <div class="search-container" data-search-box>
+    <div class="input-wrapper">
+      <input type="search" name="search" aria-label="Buscar" placeholder="Buscar juegos..." class="search-field">
+
+      <button class="search-submit" aria-label="Buscar" data-search-toggler>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+
+      <button class="search-close" aria-label="Cerrar búsqueda" data-search-toggler></button>
+    </div>
+  </div>
+
+  <main>
+    <article>
+
+      <!-- CONTACT SECTION -->
+      <section class="section contact" id="contacto" aria-label="contacto">
+        <div class="container">
+
+          <div class="contact-hero">
+            <h1 class="h1 contact-title">
+              Contáctanos <span class="span">Gamer</span>
+            </h1>
+            <p class="contact-subtitle">
+              ¿Tienes preguntas sobre nuestros juegos o productos? ¡Estamos aquí para ayudarte! Contáctanos y únete a nuestra comunidad gamer.
+            </p>
+          </div>
+
+          <div class="contact-content">
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form">
+              <div class="contact-form-inner">
+                <h2 class="h2 form-title">
+                  Envíanos un <span class="span">Mensaje</span>
+                </h2>
+
+                <form action="#" method="POST" class="form" novalidate>
+                  <div class="form-group">
+                    <label for="name" class="form-label">Nombre Completo</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre gamer" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="tu-email@ejemplo.com" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <input type="text" id="subject" name="subject" class="form-input" placeholder="¿En qué podemos ayudarte?" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Cuéntanos más detalles..." required></textarea>
+                  </div>
+
+                  <button type="submit" class="form-btn">
+                    Enviar Mensaje
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="contact-info">
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+                <h3 class="h3 contact-card-title">Ubicación</h3>
+                <p class="contact-card-text">
+                  Av. Gamer 123<br>
+                  Lima, Lima<br>
+                  Perú, 15001
+                </p>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+                <h3 class="h3 contact-card-title">Teléfono</h3>
+                <p class="contact-card-text">
+                  <a href="tel:+51987654321" class="contact-card-link">+51 987 654 321</a><br>
+                </p>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <h3 class="h3 contact-card-title">Email</h3>
+                <p class="contact-card-text">
+                  <a href="mailto:soporte@gamics.com" class="contact-card-link">soporte@gamics.com</a><br>
+                  <a href="mailto:ventas@gamics.com" class="contact-card-link">ventas@gamics.com</a>
+                </p>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <ion-icon name="time-outline"></ion-icon>
+                </div>
+                <h3 class="h3 contact-card-title">Horarios</h3>
+                <p class="contact-card-text">
+                  Lun - Vie: 9:00 AM - 8:00 PM<br>
+                  Sáb - Dom: 10:00 AM - 6:00 PM
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo y descripción -->
+      <div class="footer-brand">
+        <h2 class="footer-logo">Gamics</h2>
+        <p>Tu tienda gamer definitiva: juegos, consolas y accesorios con las mejores ofertas.</p>
+      </div>
+
+      <!-- Navegación rápida -->
+      <div class="footer-links">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#shop">Tienda</a></li>
+          <li><a href="index.html#ofertas">Ofertas</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer-contact">
+        <h3>Contáctanos</h3>
+        <p>Email: soporte@gamics.com</p>
+        <p>Teléfono: +51 987 654 321</p>
+        <p>Dirección: Av. Gamer 123, Lima, Perú</p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="footer-social">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gamics. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <a href="#top" class="back-top-btn" data-back-top-btn aria-label="Volver arriba">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+  <!-- scripts -->
+  <script src="js/scriptContacto.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
